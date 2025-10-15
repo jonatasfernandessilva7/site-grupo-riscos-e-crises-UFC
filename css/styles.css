@@ -1,0 +1,145 @@
+:root{
+  --primary: #02182f; /* azul padrão */
+  --accent: #f5a623;  /* laranja */
+  --bg: #ffffff;
+  --muted: #666666;
+  --card-bg: #fafafa;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+body{
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+  color:#222;
+  background:var(--bg);
+  line-height:1.5
+}
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:24px
+}
+.site-header{
+  background:linear-gradient(90deg,var(--primary),#2b8bd6);
+  color:#fff;
+  padding:20px 0
+}
+.header-inner{
+  display:flex;
+  gap:16px;
+  align-items:center
+}
+.logo{
+  width:88px;
+  height:88px;
+  object-fit:contain;
+  border-radius:8px;
+  /*background:#fff;*/
+  padding:6px
+}
+#group-name{
+  font-size:1.25rem;
+  margin-bottom:6px
+}
+.tagline{
+  opacity:0.95
+}
+.main-nav{
+  background:rgba(255,255,255,0.06);
+  border-top:1px solid rgba(255,255,255,0.05)
+}
+.nav-inner{
+  display:flex;
+  align-items:center
+}
+.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap:18px;
+  padding:10px 0;
+  margin:0
+}
+.main-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:6px 10px;
+  border-radius:6px
+}
+.main-nav a:hover, .main-nav a:focus{
+  background:rgba(255,255,255,0.08)
+}
+.section{
+  margin-top:28px
+}
+.section h2{
+  color:var(--primary);
+  margin-bottom:12px
+}
+.members-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:12px
+}
+.card{
+  background:var(--card-bg);
+  border-radius:8px;
+  padding:12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  box-shadow:0 1px 3px rgba(0,0,0,0.06)
+}
+.card img{
+  width:72px;
+  height:72px;
+  object-fit:cover;
+  border-radius:8px
+}
+.card .info{
+  flex:1
+}
+.card .name{
+  font-weight:700
+}
+.card .role{
+  font-size:0.9rem;
+  color:var(--muted)
+}
+.list{
+  list-style:none
+}
+.list li{
+  margin-bottom:8px;
+  padding:10px;
+  border-left:4px solid var(--primary);
+  background:#fff;
+  border-radius:4px
+}
+.list li .meta{
+  font-size:0.85rem;
+  color:var(--muted)
+}
+.site-footer{
+  border-top:1px solid #eee;
+  margin-top:32px;
+  padding:12px 0;
+  color:var(--muted)
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:12px
+}
+@media (max-width:600px){
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .footer-inner{flex-direction:column}
+}
+
+/* parceiros */
+.partners{display:flex;gap:12px;align-items:center}
+.partners a{display:inline-block}
+.partners img{height:36px;display:block}
