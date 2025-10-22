@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Grupo de Riscos e Crises - UFC</title>
+  <link rel="shortcut icon" href="img/logo-placeholder.png" type="image/x-icon">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -69,6 +70,27 @@
       </div>
     </div>
   </footer>
+
+  <!-- Assistente estático (informativo) -->
+  <div class="assistant-widget" role="complementary" aria-label="Sobre o grupo">
+    <!-- SVG inline para permitir animação (olhos piscando) -->
+    <svg class="assistant-svg" width="56" height="56" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
+      <g>
+        <circle cx="12" cy="7.8" r="3.2" fill="#0a66c2" />
+        <rect x="6" y="12.8" width="12" height="6" rx="3" fill="#0a66c2" />
+        <!-- olhos: dois círculos que serão animados (escala para piscar) -->
+        <g id="eyes" fill="#fff">
+          <circle id="eye-left" cx="9.2" cy="7.6" r="0.6" />
+          <circle id="eye-right" cx="14.8" cy="7.6" r="0.6" />
+        </g>
+      </g>
+    </svg>
+    <button class="assistant-close" aria-label="Fechar assistente" title="Fechar">×</button>
+    <div class="aw-text">
+      <div class="aw-title">Olá — somos o Grupo de Riscos</div>
+      <div class="aw-desc">Pesquisamos riscos, gestão de crises e aplicações de IA/ML para prevenção e resposta. Explore membros, publicações e editais.</div>
+    </div>
+  </div>
 
   <script src="js/script.js"></script>
 </body>

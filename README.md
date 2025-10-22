@@ -23,3 +23,7 @@ Se desejar, posso substituir as cores pelas cores exatas da sua logo se você me
 Parceiros / logos no rodapé:
 - As páginas mostram as logos da USP e da UEL no rodapé (links externos). Os arquivos de imagem estão em `img/usp.svg` e `img/uel.svg`.
 - Para substituir por versões oficiais, coloque os arquivos com os mesmos nomes na pasta `img/` (ex.: `img/usp.svg`) ou altere os `src` no HTML do rodapé.
+
+Assistente informativo (tela inicial):
+- A página inicial agora exibe um widget estático no canto inferior direito com um ícone e uma pequena explicação sobre o grupo. O markup está embutido em `index.html` e o ícone em `img/assistant.svg`.
+- Para alterar o texto, edite o HTML em `index.html` dentro da div `.assistant-widget`.

@@ -25,7 +25,7 @@ body{
 .site-header{
   background:linear-gradient(90deg,var(--primary),#2b8bd6);
   color:#fff;
-  padding:20px 0
+  padding:20px 0;
 }
 .header-inner{
   display:flex;
@@ -72,6 +72,12 @@ body{
 .main-nav a:hover, .main-nav a:focus{
   background:rgba(255,255,255,0.08)
 }
+
+/* efeito ripple tecnológico para links da navbar */
+.main-nav a{position:relative;overflow:hidden}
+.main-nav a .ripple{position:absolute;width:16px;height:16px;border-radius:50%;transform:scale(0);background:rgba(255,255,255,0.18);pointer-events:none}
+.main-nav a.ripple-animate .ripple{animation:ripple-ani 420ms cubic-bezier(.2,.9,.2,1)}
+@keyframes ripple-ani{to{transform:scale(6);opacity:0}}
 .section{
   margin-top:28px
 }
@@ -143,3 +149,40 @@ body{
 .partners{display:flex;gap:12px;align-items:center}
 .partners a{display:inline-block}
 .partners img{height:36px;display:block}
+
+/* widget assistente (estático) */
+.assistant-widget{position:fixed;right:18px;bottom:18px;background:linear-gradient(180deg,#fff,#f7f9ff);border:1px solid rgba(10,102,194,0.08);box-shadow:0 6px 18px rgba(2,20,60,0.12);border-radius:12px;display:flex;gap:12px;align-items:center;padding:12px 14px;max-width:300px;z-index:1200}
+.assistant-widget .assistant-svg{width:56px;height:56px;flex:0 0 56px;border-radius:8px}
+.assistant-widget .aw-text{font-size:0.95rem;color:#08233b}
+.assistant-widget .aw-title{font-weight:700;margin-bottom:6px}
+.assistant-widget .aw-desc{font-size:0.9rem;color:var(--muted)}
+
+.assistant-close{position:absolute;top:6px;right:8px;border:0;background:transparent;color:#33475b;font-size:18px;line-height:1;cursor:pointer;padding:4px;border-radius:6px}
+.assistant-widget{padding:14px 18px 14px 14px;position:fixed}
+.assistant-close:focus{outline:2px solid rgba(10,102,194,0.18)}
+
+@media (max-width:600px){
+  .assistant-widget{right:12px;left:12px;bottom:12px;max-width:none}
+}
+
+/* animação: flutuar */
+@keyframes aw-float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* piscar olhos (escala Y) */
+@keyframes aw-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+.assistant-widget{animation: aw-float 4s ease-in-out infinite}
+.assistant-widget #eyes {transform-origin: center;}
+.assistant-widget #eye-left, .assistant-widget #eye-right {animation: aw-blink 5s linear infinite}
+
+/* respeitar preferência por reduzir movimento */
+@media (prefers-reduced-motion: reduce){
+  .assistant-widget, .assistant-widget #eye-left, .assistant-widget #eye-right {animation: none}
+}
